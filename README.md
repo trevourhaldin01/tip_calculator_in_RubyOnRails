@@ -1,6 +1,6 @@
 # **Tip Calculator Application**
 
-A Ruby on Rails application for calculating tips based on user inputs. This application allows users to input a bill amount, select a tip percentage, and specify the number of people sharing the bill. The application computes the total tip amount, total bill, and per-person amounts. An admin dashboard displays past calculations and includes pagination.
+A Ruby on Rails application for calculating tips based on user inputs. This application allows users to input a bill amount, select a tip percentage, and specify the number of people sharing the bill. The application computes the total tip amount, total bill, and per-person amounts. An admin dashboard displays past calculations and includes pagination. The live demo is hosted on render and can be accessed via (https://tip-calculator-in-rubyonrails.onrender.com/)
 
 # Features
 1. **Tip Calculator**
