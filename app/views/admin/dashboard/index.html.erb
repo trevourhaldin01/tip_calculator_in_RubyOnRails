@@ -1,0 +1,32 @@
+<h1>Admin Dashboard - Tip Calculations</h1>
+
+<table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+  <thead>
+    <tr style="background-color: #00474b; color: white;">
+      <th style="padding: 8px; text-align: left;">Bill Amount</th>
+      <th style="padding: 8px; text-align: left;">Tip Percentage</th>
+      <th style="padding: 8px; text-align: left;">Tip Amount</th>
+      <th style="padding: 8px; text-align: left;">Total Bill</th>
+      <th style="padding: 8px; text-align: left;">Number of People</th>
+      <th style="padding: 8px; text-align: left;">Per-Person Amount</th>
+      <th style="padding: 8px; text-align: left;">Timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @calculations.each do |calculation| %>
+      <tr>
+        <td style="padding: 8px;">$<%= number_with_precision(calculation.bill_amount, precision: 2) %></td>
+        <td style="padding: 8px;"><%= calculation.tip_percentage %>%</td>
+        <td style="padding: 8px;">$<%= number_with_precision(calculation.tip_amount, precision: 2) %></td>
+        <td style="padding: 8px;">$<%= number_with_precision(calculation.total_amount, precision: 2) %></td>
+        <td style="padding: 8px;"><%= calculation.people_count %></td>
+        <td style="padding: 8px;">$<%= number_with_precision(calculation.total_per_person, precision: 2) %></td>
+        <td style="padding: 8px;"><%= calculation.created_at.strftime('%B %d, %Y at %I:%M %p') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="pagination">
+  <%= paginate @calculations %>
+</div>

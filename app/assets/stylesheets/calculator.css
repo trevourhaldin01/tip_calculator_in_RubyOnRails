@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+  
+.navbar {
+    background-color: #00474b;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .navbar a:not(:last-child) {
+    margin-right: 15px;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  .calculator-area{
+    background-color: #c5e4e7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 70px); /* Adjust if navbar height changes */
+  }  
+.container {
+background-color: white;
+border-radius: 15px;
+display: flex;
+
+
+padding: 20px;
+gap: 20px;
+width: 800px;
+
+}
+
+.left-section {
+flex: 1;
+margin-right: 20px;
+}
+
+.input-field {
+width: 100%;
+padding: 10px;
+border: 2px solid #26c0ab;
+border-radius: 8px;
+font-size: 18px;
+}
+
+.button-group {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 10px;
+margin-bottom: 15px;
+}
+
+.button {
+padding: 10px;
+background-color: #00474b;
+color: white;
+text-align: center;
+border-radius: 8px;
+border: none;
+font-size: 18px;
+cursor: pointer;
+}
+.button.active {
+background-color: #26c0ab;
+}
+.right-section {
+flex: 1;
+background-color: #00474b;
+border-radius: 15px;
+color: white;
+padding: 20px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.result-row {
+display: flex;
+justify-content: space-between;
+margin-bottom: 10px;
+}
+
+.reset-link {
+background-color: #26c0ab;
+padding: 15px;
+font-size: 18px;
+color: #00474b;
+text-align: center;
+border-radius: 8px;
+display: block;
+text-decoration: none;
+}
+
+.submit-button {
+background-color: #26c0ab;
+margin: 5px 0;
+padding: 10px 15px;
+font-size: 18px;
+color: #00474b;
+border-radius: 8px;
+width: 100%;
+}
+
+.pagination {
+    margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Stack the sections vertically */
+      padding: 20px; /* Add padding for small screens */
+    }
+  
+    .left-section,
+    .right-section {
+      max-width: 100%; /* Full width on small screens */
+    }
+  }
