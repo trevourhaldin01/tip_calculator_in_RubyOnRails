@@ -26,11 +26,3 @@ module TipCalculator
   end
 end
 
-if Rails.env.production?
-  begin
-    ActiveRecord::Base.connection
-  rescue ActiveRecord::NoDatabaseError
-    ActiveRecord::Tasks::DatabaseTasks.create_current
-    ActiveRecord::Migrator.migrate("db/migrate/")
-  end
-end
