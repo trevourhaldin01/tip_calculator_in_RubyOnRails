@@ -25,3 +25,12 @@ module TipCalculator
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+
+if Rails.env.production?
+  begin
+    ActiveRecord::Base.connection
+  rescue ActiveRecord::NoDatabaseError
+    ActiveRecord::Tasks::DatabaseTasks.create_current
+    ActiveRecord::Migrator.migrate("db/migrate/")
+  end
+end
